@@ -6,4 +6,11 @@
 // 3. classList            -> #themeBtn, .card
 // 4. Create & Remove      -> #addTaskBtn, #resetTasksBtn, #tasks
 // 5. Events               -> #click-me, #list, #signupForm, #email, .error
+const btn = document.querySelector("#click-me");
+let count = 0;
+count++;
+btn.addEventListener("click",() => {
+    btn.textContent = "Clicked";
+    
+});
 // 6. Pokémon Card Fetcher -> #fetchBtn, #resetBtn, #gallery
