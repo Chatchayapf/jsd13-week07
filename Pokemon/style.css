@@ -1,0 +1,85 @@
+/* bg body */
+body {
+ background-color: antiquewhite;
+}
+
+
+/* 1. คอนเทนเนอร์จัดวางการ์ดทั้งหมด */
+#progressX {
+  display: flex;
+  flex-wrap: wrap; /* เมื่อการ์ดเต็มแถว จะตกลงมาบรรทัดใหม่ */
+  gap: 16px; /* ระยะห่างระหว่างการ์ด */
+  padding: 20px;
+  justify-content: center;
+}
+
+/* 2. ตกแต่งปุ่มกดสุ่มโปเกมอน */
+#btn-pokemon {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff7474; /* สีแดงโปเกบอล */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+}
+
+#btn-pokemon:hover {
+  background-color: #dc2626; /* สีเข้มขึ้นเมื่อเอาเมาส์วาง */
+}
+
+/* 3. ตกแต่งตัวการ์ด */
+.card {
+  width: 140px;
+  background-color: #f9ff85;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none; /* ป้องกันการคลิกไฮไลต์ข้อความ */
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ที่การ์ด */
+.card:hover {
+  transform: translateY(-4px); /* ลอยขึ้นเล็กน้อย */
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.2);
+  border-color: #cc30fc; /* เปลี่ยนสีขอบเป็นสีแดง */
+}
+
+/* 4. ป้ายแสดง ID โปเกมอน (เช่น #25) */
+.pokemon-id {
+  align-self: flex-start; /* ดันป้ายไปชิดซ้ายบนของการ์ด */
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  background-color: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* 5. รูปโปเกมอน */
+.card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+/* 6. ชื่อโปเกมอน */
+.card p {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: capitalize; /* ปรับอักษรตัวแรกของชื่อให้เป็นตัวพิมพ์ใหญ่ */
+  text-align: center;
+}
