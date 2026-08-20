@@ -5,10 +5,7 @@ export default function Nook({question, answer, handleAnswer}) {
 <div className = "flex flex-col justify-center items-center pt-10 bg-purple-500 w-[90%]">
     <h1>Nook</h1>
       {/* Render SecretRoom here */}
-        <SecretRoom 
-        question={question} 
-        answer={answer} 
-        handleAnswer={handleAnswer}/>
+        <SecretRoom />
     </div>
   );
 }
