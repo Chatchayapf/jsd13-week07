@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM Artist Clicker</title>
+    <!-- เชื่อม CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- ฝั่งซ้าย: โซนคลิก -->
+        <div class="click-zone">
+            <h1>My Favorite SM Artist Clicker</h1>
+            <div class="score-display">Pops: <span id="total-clicks">0</span></div>
+            
+            <div class="main-object-wrapper" id="main-object">
+                <!-- โลโก้ SM (วัตถุหลักที่ต้องคลิก) -->
+                <img src="https://119-cdn.smtown.com/upload/assets/renewal/contents/introNews/intro_item03.png" alt="SM Logo" class="sm-logo">
+                <!-- โซนนี้จะใช้ JS ใส่เลข +1 และรูปการ์ตูนศิลปิน -->
+            </div>
+        </div>
+
+        <!-- ฝั่งขวา: แผงข้อมูล -->
+        <div class="info-panel">
+            <h2>Status</h2>
+            <div class="status-box">
+                <p>Current Rank: <strong id="current-rank">New Fan</strong></p>
+                <p>Next Unlock at: <strong id="next-unlock">10</strong> clicks</p>
+                <p id="unlock-message">Keep clicking to meet your IDOL!</p>
+            </div>
+            
+            <div class="artist-list">
+                <h3>Hey! Artists:</h3>
+                <ul id="unlocked-list">
+                    <li>(None yet)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- เชื่อม JS -->
+    <script src="script.js"></script>
+</body>
+</html>

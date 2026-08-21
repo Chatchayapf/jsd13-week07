@@ -1,0 +1,140 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.game-container {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin: auto;
+}
+
+/* ฝั่งซ้าย */
+.click-zone {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #eee;
+    background-color: #ffdada;
+}
+
+.score-display {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff0055; /* สีชมพูสไตล์ SM */
+    margin: 20px 0;
+}
+
+.main-object-wrapper {
+    position: relative; /*  เพื่อให้ +1 ตรงโลโก้ */
+    cursor: pointer;
+    transition: transform 0.1s; /* ทำเอฟเฟกต์ยุบตัวเวลาคลิก */
+}
+
+.main-object-wrapper:active {
+    transform: scale(0.95); /* ยุบตัวลงเล็กน้อยเวลาคลิก */
+}
+
+.sm-logo {
+    width: 200px;
+    height: auto;
+    user-select: none; /* ห้ามคลุมดำรูป */
+}
+
+/* .artistCartoons {
+    width: 5px;
+    height: 5px;
+} */
+
+/* --- Style สำหรับ Pop-up Animation (ใช้ JS สร้าง) --- */
+.click-popup {
+    position: absolute;
+    pointer-events: none; /* ห้ามคลิกโดนตัวมันเอง */
+    animation: fadeUpAndOut 0.8s ease-out forwards; /* เล่นแอนิเมชัน */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffbad1;
+}
+
+.popup-artist-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid #ff0055;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    margin-top: 3px;
+}
+
+@keyframes fadeUpAndOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(1.2); /* ลอยขึ้นและจางหายไป */
+    }
+}
+
+/* ฝั่งขวา */
+.info-panel {
+    width: 300px;
+    padding: 40px;
+    background-color: white;
+}
+
+.status-box {
+    background-color: #fff0f5;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffc0cb;
+    margin-bottom: 20px;
+}
+
+.status-box p {
+    margin: 10px 0;
+}
+
+.artist-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.artist-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้งเมื่อดูบนมือถือ */
+        max-height: none;       /* ยกเลิกการจำกัดความสูงบนมือถือ */
+        height: auto
+    }
+}
